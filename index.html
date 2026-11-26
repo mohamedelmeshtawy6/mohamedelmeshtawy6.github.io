@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Elmeshtawy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE professional, calm, senior: a hiring manager should trust it in one glance
+   IDEA a studio portrait on a dark set, the page continues the photo's own backdrop
+   PICTURE the portrait itself, large, fading into the hero ground; facts in a quiet row
+   COLOUR ink #0b121b (photo backdrop), white, one blue #2f7cf6, Austrian red only as a hairline
+   TYPE Manrope 800 + Inter
+   LAYOUT laptop: text left, portrait right bleeding to the band edge; phone: portrait, name, actions */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b121b);--ink:light-dark(#0b121b,#e9eef5);--soft:light-dark(#566173,#9aa7b8);--line:light-dark(#e4e8ee,#1d2836);--card:light-dark(#f6f8fb,#111b27);--blue:light-dark(#1f6be0,#5b9bff);--dark:#0b121b;--red:#e3242b}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.band{padding-block:clamp(56px,7vw,104px)}
+h1,h2,h3{font-family:Manrope,Inter,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,5.6vw,68px);font-weight:800}
+h2{font-size:clamp(30px,3.6vw,42px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+.lede{font-size:17px;color:var(--soft);max-width:62ch}
+.label{font-weight:600;color:var(--blue);margin-bottom:10px;font-size:15px}
+.shead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:40px}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(11,18,27,.92);backdrop-filter:blur(12px);color:#e9eef5;border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;gap:24px;min-height:64px;flex-wrap:wrap}
+.logo{font:800 17px Manrope,sans-serif;text-decoration:none;margin-right:auto}
+.links{display:flex;flex-wrap:wrap;gap:4px 26px}
+.links a{text-decoration:none;color:#9aa7b8;font-weight:500;font-size:15px;padding:10px 0}
+.links a:hover{color:#fff}
+.navcta{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:10px;background:#fff;color:#0b121b;font-weight:600;font-size:14px;text-decoration:none}
+
+.hero{background:var(--dark);color:#e9eef5;overflow:hidden}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end;gap:0 40px}
+.htext{padding-block:clamp(56px,8vw,112px)}
+.where{display:inline-flex;align-items:center;gap:10px;color:#c5cfdb;font-weight:500;margin-bottom:22px}
+.flag{width:22px;height:15px;border-radius:2px;background:linear-gradient(var(--red) 33.3%,#fff 33.3% 66.6%,var(--red) 66.6%)}
+.role{display:block;color:#7fb0ff;font-size:.62em;margin-top:10px}
+.hero .lede{color:#aab6c5;margin-top:22px;max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:12px;font:600 15px Inter,sans-serif;text-decoration:none;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer;transition:background .15s,border-color .15s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:focus-visible,.navcta:focus-visible,.copy:focus-visible{outline:3px solid #7fb0ff;outline-offset:2px}
+.btn.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.pri:hover{filter:brightness(1.08)}
+.hero .btn:not(.pri),.contact .btn:not(.pri){border-color:rgba(255,255,255,.2)}
+.hero .btn:not(.pri):hover,.contact .btn:not(.pri):hover{background:rgba(255,255,255,.07)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:48px;border-top:1px solid rgba(255,255,255,.12);max-width:360px}
+.stat{padding:18px 16px 0 0}
+.stat b{display:block;font:800 clamp(28px,3vw,36px) Manrope,sans-serif;color:#fff;line-height:1.1}
+.stat span{color:#8e9bad;font-size:14px}
+.photo{position:relative;align-self:stretch;display:flex;align-items:flex-end}
+.photo img{width:100%;max-width:540px;margin-left:auto;aspect-ratio:1;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 78% 88% at 58% 88%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 78% 88% at 58% 88%,#000 58%,transparent 100%)}
+
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px 72px}
+.about p+p{margin-top:16px}
+.skills{display:grid;gap:0;border-top:1px solid var(--line)}
+.sk{display:grid;grid-template-columns:11em minmax(0,1fr);gap:8px 20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.sk h3{font-size:16px;padding-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{padding:6px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:500}
+
+.work{background:var(--card)}
+.pgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.proj{grid-column:span 4;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color .15s,transform .15s}
+.proj:hover{border-color:var(--blue);transform:translateY(-3px)}
+.proj.feat{grid-column:span 12;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:28px 40px;align-items:center;padding:36px}
+.proj.feat:hover{transform:none}
+.proj.feat.rev{grid-template-columns:minmax(0,1.6fr) minmax(0,.9fr)}
+.proj.feat.rev .ftext{order:2}
+.mark.img.light{background:#fff;border:1px solid var(--line)}
+.ftext{display:flex;flex-direction:column;gap:14px}
+.ftext h3{font-size:26px}
+.mark img{width:100%;height:100%;border-radius:14px;object-fit:cover}
+.mark.img{background:#000;overflow:hidden}
+.shots{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:12px;padding:6px 2px 10px}
+.shots img{width:100%;aspect-ratio:236/512;border-radius:16px;border:4px solid #0b121b;box-shadow:0 12px 28px -14px rgba(11,18,27,.45);scroll-snap-align:start;background:#fff}
+.shots img:nth-child(even){margin-top:24px}
+.ptop{display:flex;align-items:center;gap:14px}
+.mark{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff;font:800 22px Manrope,sans-serif;flex:none}
+.cat{font-size:14px;color:var(--soft)}
+.proj p{color:var(--soft);flex:1}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--card);color:var(--soft)}
+.plink{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;padding:0 14px;white-space:nowrap;border-radius:10px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;text-decoration:none}
+.plink svg{width:16px;height:16px}
+
+.xgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px 72px}
+.tl{margin-top:28px}
+.job{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:4px 24px;padding:22px 0;border-top:1px solid var(--line)}
+.when{font-weight:600;color:var(--soft);font-size:14px;white-space:nowrap;padding-top:2px}
+.job h3{margin-bottom:4px}
+.co{color:var(--blue);font-weight:600;font-size:15px;margin-bottom:8px}
+.job p{color:var(--soft)}
+
+.contact{background:var(--dark);color:#e9eef5}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px 72px;align-items:center}
+.contact .lede{color:#aab6c5;margin-top:16px}
+.rows{display:grid;gap:12px}
+.row{display:flex;align-items:center;gap:14px;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px;min-height:64px;text-decoration:none;transition:background .15s}
+.row:hover{background:rgba(255,255,255,.05)}
+.row svg{width:22px;height:22px;flex:none;color:#7fb0ff}
+.row small{display:block;color:#8e9bad;font-size:13px}
+.mail{display:flex;align-items:center;gap:14px;flex:1;text-decoration:none;overflow-wrap:anywhere}
+.mail:hover .addr{text-decoration:underline}
+.copy{background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:9px;min-height:40px;padding:0 14px;font:600 14px Inter,sans-serif;cursor:pointer;flex:none}
+.sheet{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:rgba(11,18,27,.55);padding:16px}
+.sheet.on{display:grid}
+.box{background:var(--bg);color:var(--ink);border-radius:20px;padding:24px;width:min(400px,100%);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.box h3{font-size:20px;margin-bottom:4px}
+.box p{color:var(--soft);font-size:15px;margin-bottom:16px;overflow-wrap:anywhere}
+.opt{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:0 16px;margin-bottom:10px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px Inter,sans-serif;text-decoration:none;cursor:pointer;text-align:left}
+.opt:hover{border-color:var(--blue)}
+.opt:focus-visible{outline:3px solid #7fb0ff}
+.opt i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:800;font-size:13px;flex:none}
+.close{background:none;border:0;color:var(--soft);font:500 15px Inter,sans-serif;cursor:pointer;width:100%;min-height:44px}
+footer{background:var(--dark);color:#6f7d90;font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-block:24px}
+
+@media(max-width:960px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.proj{grid-column:span 1}.proj.feat,.proj.feat.rev{grid-column:1/-1;grid-template-columns:minmax(0,1fr);padding:24px}.proj.feat.rev .ftext{order:0}.shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.shots img{flex:none;width:130px;scroll-snap-align:start}}
+@media(max-width:860px){.hgrid,.about,.xgrid,.cgrid{grid-template-columns:minmax(0,1fr)}.photo{order:-1}.photo img{max-width:360px;margin:24px auto 0;-webkit-mask-image:linear-gradient(0deg,transparent 0,#000 22%);mask-image:linear-gradient(0deg,transparent 0,#000 22%)}.htext{padding-top:0}.links{display:none}}
+@media(max-width:600px){.pgrid{grid-template-columns:minmax(0,1fr)}.sk,.job{grid-template-columns:minmax(0,1fr)}.sk h3{padding-top:0}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Mohamed Elmeshtawy</a>
+  <div class="links"><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+  <a class="navcta" href="mailto:mohamedelmeshtawy69@gmail.com?subject=Flutter%20Developer%20opportunity" data-mail>Hire me</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap hgrid">
+    <div class="htext">
+      <div class="where"><span class="flag" aria-hidden="true"></span>Based in Vienna, Austria</div>
+      <h1>Mohamed Elmeshtawy<span class="role">Flutter Developer</span></h1>
+      <p class="lede">I build fast, reliable cross-platform mobile apps for Android and iOS, from clean architecture to release on the store.</p>
+      <div class="btns">
+        <a class="btn pri" href="mailto:mohamedelmeshtawy69@gmail.com?subject=Flutter%20Developer%20opportunity" data-mail><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/mohamed-elmeshtawy/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/mohamedelmeshtawy6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>3 yrs</b><span>Flutter</span></div>
+        <div class="stat"><b>4 yrs</b><span>Software engineering</span></div>
+      </div>
+    </div>
+    <div class="photo"><img src="photo.jpg" alt="Portrait of Mohamed Elmeshtawy"></div>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="band wrap about">
+    <div>
+      <div class="label">About</div>
+      <h2>Clean code, smooth apps</h2>
+      <p class="lede" style="margin-top:20px">I'm a software engineer with 4 years of experience, 3 of them building Flutter apps for Android and iOS. Most recently I built mobile apps connected to Odoo systems that help organisations run their daily work.</p>
+      <p class="lede" style="margin-top:16px">I write clean, reusable code following SOLID principles and clean architecture. I'm now based in Vienna, looking to join a team building products people use every day.</p>
+    </div>
+    <div>
+      <div class="label">Skills</div>
+      <div class="skills" id="skills"></div>
+    </div>
+  </section>
+
+  <section id="work" class="band work">
+    <div class="wrap">
+      <div class="shead">
+        <div><div class="label">Projects</div><h2>Selected work</h2></div>
+        <a class="btn" href="https://github.com/mohamedelmeshtawy6" target="_blank" rel="noopener">More on GitHub</a>
+      </div>
+      <div class="pgrid" id="pgrid"></div>
+    </div>
+  </section>
+
+  <section id="experience" class="band wrap xgrid">
+    <div>
+      <div class="label">Career</div>
+      <h2>Experience</h2>
+      <div class="tl">
+        <div class="job"><div class="when">08/2023 – 07/2025</div><div><h3>Flutter Developer</h3><div class="co">Gulf Programming</div><p>Built mobile apps connected to Odoo systems that support and simplify the daily needs of organisations and their clients.</p></div></div>
+        <div class="job"><div class="when">04/2020 – 05/2021</div><div><h3>Flutter Developer</h3><div class="co">Remaba</div><p>Worked as part of the development team, writing clean, self-documenting code that other developers could easily reuse.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="label">Background</div>
+      <h2>Education</h2>
+      <div class="tl">
+        <div class="job"><div class="when">2016 – 2020</div><div><h3>Bachelor of Computers and Information Technology</h3><div class="co">Computer Science</div></div></div>
+        <div class="job"><div class="when">2018</div><div><h3>Android Mobile Development</h3><div class="co">ITI, Information Technology Institute</div></div></div>
+        <div class="job"><div class="when">Languages</div><div><h3><span style="white-space:nowrap">Arabic ·</span> <span style="white-space:nowrap">English ·</span> <span style="white-space:nowrap">German (A1)</span></h3></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="band contact">
+    <div class="wrap cgrid">
+      <div>
+        <div class="label" style="color:#7fb0ff">Contact</div>
+        <h2>Let's work together</h2>
+        <p class="lede">I'm open to Flutter developer opportunities across Europe, especially in Vienna and throughout Austria. Feel free to email me—I’ll get back to you promptly.</p>
+        <div class="btns"><a class="btn pri" href="mailto:mohamedelmeshtawy69@gmail.com?subject=Flutter%20Developer%20opportunity" data-mail>Send me an email</a></div>
+      </div>
+      <div class="rows">
+        <div class="row"><a class="mail" href="mailto:mohamedelmeshtawy69@gmail.com?subject=Flutter%20Developer%20opportunity" data-mail><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg><div><small>Email</small><span class="addr">mohamedelmeshtawy69@gmail.com</span></div></a><button class="copy" id="copy">Copy</button></div>
+        <a class="row" href="https://www.linkedin.com/in/mohamed-elmeshtawy/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5z"/></svg><div><small>LinkedIn</small>linkedin.com/in/mohamed-elmeshtawy</div></a>
+        <a class="row" href="https://github.com/mohamedelmeshtawy6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg><div><small>GitHub</small>github.com/mohamedelmeshtawy6</div></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t"><div class="box">
+  <h3 id="sh-t">Send me an email</h3>
+  <p>mohamedelmeshtawy69@gmail.com</p>
+  <a class="opt" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mohamedelmeshtawy69@gmail.com&amp;su=Flutter%20Developer%20opportunity" target="_blank" rel="noopener"><i style="background:#ea4335">G</i>Open in Gmail</a>
+  <a class="opt" href="https://outlook.office.com/mail/deeplink/compose?to=mohamedelmeshtawy69@gmail.com&amp;subject=Flutter%20Developer%20opportunity" target="_blank" rel="noopener"><i style="background:#0a64d6">O</i>Open in Outlook</a>
+  <a class="opt" href="mailto:mohamedelmeshtawy69@gmail.com?subject=Flutter%20Developer%20opportunity"><i style="background:#566173">@</i>Open my mail app</a>
+  <button class="opt" id="sh-copy"><i style="background:#0f8a6a">⧉</i><span>Copy email address</span></button>
+  <button class="close" id="sh-x">Close</button>
+</div></div>
+<footer><div class="wrap"><span>© 2026 Mohamed Elmeshtawy</span><span>Flutter Developer · Vienna, Austria</span></div></footer>
+
+<script>
+{
+  const skills=[
+    {h:"Core",t:["Flutter","Dart","OOP","Android","iOS"]},
+    {h:"State management",t:["Bloc","Provider","GetX"]},
+    {h:"Architecture",t:["Clean Architecture","MVVM","MVC","SOLID","Clean code"]},
+    {h:"Data & backend",t:["REST APIs","Firebase","Odoo integrations","PostgreSQL"]},
+    {h:"Local storage",t:["Isar","SQFlite","Shared Preferences"]},
+    {h:"Other",t:["Git","C++","Python"]}
+  ];
+  document.getElementById('skills').innerHTML=skills.map(g=>`<div class="sk"><h3>${g.h}</h3><div class="tags">${g.t.map(x=>`<span class="tag">${x}</span>`).join('')}</div></div>`).join('');
+
+  const projects=[
+    {n:"Waged",cat:"E-commerce",feat:1,dir:"waged",icon:"waged-icon.png",shots:["home","product","cart","order","payment"],c:"#000",d:"A fast, secure shopping app for fashion, electronics and home essentials. Customers browse categories, add products to their cart, choose a delivery address and pay by card or cash on delivery.",s:["Android","iOS","Cart & checkout","Card payments"],u:"https://play.google.com/store/apps/details?id=com.gp.waged"},
+    {n:"Waged Plus",cat:"HR & attendance",feat:1,rev:1,dir:"wagedplus",icon:"wagedplus-icon.png",shots:["attendance","requests","leaves","profile"],d:"An HR app for employees. They check in and out by face or fingerprint with location and time rules, follow their trips, request leave and salary advances, track each request's review status, and view their contracts and payslips. Fully localised in Arabic with a right-to-left layout.",s:["Android","iOS","Attendance","Arabic RTL"],u:"https://play.google.com/store/apps/details?id=com.waged.pls"},
+    {n:"Medical",cat:"Healthcare",c:"#c2410c",d:"Patients request consultations, book appointments and keep their doctor updated on their condition.",s:["Booking","Notifications"]},
+    {n:"Woosh Center",cat:"Entertainment",c:"#7c3aed",d:"Book service cards for entertainment games and take advantage of the centre's offers.",s:["Booking","Offers"]},
+    {n:"Lawha",cat:"Marketplace",c:"#334155",d:"A marketplace for buying and selling vehicle licence plates.",s:["Listings","Marketplace"]}
+  ];
+  const play='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.5v19l10-9.5z" opacity=".8"/><path d="M14 12l3.5-3.3 3.6 2a1.5 1.5 0 0 1 0 2.6l-3.6 2z"/></svg>';
+  const mark=p=>p.icon?`<div class="mark img${p.n==='Waged Plus'?' light':''}"><img src="${p.icon}" alt="${p.n} app icon"></div>`:`<div class="mark" style="background:${p.c}">${p.n[0]}</div>`;
+  const head=p=>`<div class="ptop">${mark(p)}<div><h3>${p.n}</h3><div class="cat">${p.cat}</div></div></div>`;
+  const body=p=>`<p>${p.d}</p><div class="stack">${p.s.map(x=>`<span>${x}</span>`).join('')}</div>${p.u?`<a class="plink" href="${p.u}" target="_blank" rel="noopener">${play}Get it on Google Play</a>`:''}`;
+  document.getElementById('pgrid').innerHTML=projects.map(p=>p.feat?`<article class="proj feat${p.rev?' rev':''}"><div class="ftext">${head(p)}${body(p)}</div><div class="shots" style="--n:${p.shots.length}">${p.shots.map(x=>`<img src="${p.dir}-${x}.jpg" alt="${p.n} ${x} screen" loading="lazy">`).join('')}</div></article>`:`<article class="proj">${head(p)}${body(p)}</article>`).join('');
+
+  const sh=document.getElementById('sheet');
+  document.querySelectorAll('[data-mail]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();sh.classList.add('on');sh.querySelector('.opt').focus();}));
+  const shut=()=>sh.classList.remove('on');
+  document.getElementById('sh-x').addEventListener('click',shut);
+  sh.addEventListener('click',e=>{if(e.target===sh)shut();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')shut();});
+  const sc=document.getElementById('sh-copy'),scs=sc.querySelector('span');
+  sc.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('mohamedelmeshtawy69@gmail.com');scs.textContent='Copied';}catch(e){scs.textContent='Select the address above';}setTimeout(()=>scs.textContent='Copy email address',1800);});
+
+  const cp=document.getElementById('copy');
+  cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('mohamedelmeshtawy69@gmail.com');cp.textContent='Copied';}catch(e){cp.textContent='Select text';}setTimeout(()=>cp.textContent='Copy',1800);});
+}
+</script>
+</body>
+</html>
